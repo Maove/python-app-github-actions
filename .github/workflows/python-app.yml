@@ -30,4 +30,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Create EC2 instance
       run: |
-        aws ec2 run-instances --image-id ami-00d4ad33aaf7045d7 --count 1  --instance-type t2.micro --security-group-ids sg-0b4e3961f0e8b7a61 --subnet-id subnet-05de7ff40186d02a2 --block-device-mappings "[{\"DeviceName\":\"/dev/sdf\",\"Ebs\":{\"VolumeSize\":30,\"DeleteOnTermination\":false}}]"  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=py-api}]' 'ResourceType=volume,Tags=[{Key=Name,Value=py-api}]'
+        aws ec2 run-instances --image-id ami-02396cdd13e9a1257 --count 1  --instance-type t2.micro --security-group-ids sg-0b4e3961f0e8b7a61 --subnet-id subnet-05de7ff40186d02a2 --block-device-mappings "[{\"DeviceName\":\"/dev/sdf\",\"Ebs\":{\"VolumeSize\":30,\"DeleteOnTermination\":false}}]"  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=py-api}]' 'ResourceType=volume,Tags=[{Key=Name,Value=py-api}]'
